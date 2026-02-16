@@ -33,3 +33,5 @@ main(){
 		check_service_status "$service "
 	fi
 }
+
+main "$@"
