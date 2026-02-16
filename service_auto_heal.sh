@@ -30,6 +30,6 @@ main(){
 	if [[ -z $service ]]; then
 		log_message ERROR "Please pass service as an argument"
 	else
-		check_service_status "$service" 
+		check_service_status "$service "
 	fi
 }
