@@ -106,4 +106,5 @@ else
 fi
 }
 
+main
 
