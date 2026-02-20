@@ -18,7 +18,7 @@ check_port_availability(){
 	local port=$2
 	local user=$3
 	
-	if ssh "${user}@${node}" "ss -tunlp | grep -q ':${port} '"; then
+	if ssh "${user}@${node}" "ss -tunlp | grep -q ':\${port}'"; then
         log_message "INFO" "Port ${port} is listening on ${node}"
    else
         log_message "ERROR" "Port ${port} is not listening on ${node}"
@@ -36,7 +36,7 @@ main(){
 		log_message "ERROR" "Argument has not passed. Please provide argument"
 		exit 1
 	fi
-	check_port_availability $node $port $user
+	check_port_availability "$node" "$port" "$user"
 }
 
 main "$@"
